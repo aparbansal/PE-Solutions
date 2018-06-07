@@ -3,12 +3,28 @@
 
 using namespace std;
 
-int main()
+int main()   			//600851475143
 {
- int sum=1, n=0, temp=0, temp2=0;
+
+auto  no = 600851475143;
+auto  prime = 1;
+
+for(auto i=2; i<600851475143; i++)
+{
+  cout << i << endl;
+  while(no%i==0)
+  {
+	if(no!=i)	no = no / i;
+	else		break;
+	prime  = i;
+  }
+}
+cout << "Prime no.: " << prime << endl;
+
+/* int sum=1, n=0, temp=0, temp2=0;
  cout << "Enter the number of elements: " << endl;
  cin >> n;
-// for(int i=0; i<n; i++)
+ for(int i=0; i<n; i++)
  while(sum < 4000000)
  {
 	sum = sum + temp;
@@ -16,5 +32,6 @@ int main()
 	temp = sum-temp;
 	if(sum%2==0)	temp2 = temp2 + sum;
  }
-	cout << "\nRequired sum=" << temp2 << endl;
+	cout << "\nRequired sum=" << float(22%33) << endl;
+*/
 }
