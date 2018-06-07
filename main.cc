@@ -11,13 +11,13 @@ auto  prime = 1;
 
 for(auto i=2; i<600851475143; i++)
 {
-  cout << i << endl;
   while(no%i==0)
   {
-	if(no!=i)	no = no / i;
-	else		break;
 	prime  = i;
+	if(no!=i)	no = no / i;
+	else 		break;
   }
+  if(no==i) 	break;
 }
 cout << "Prime no.: " << prime << endl;
 
