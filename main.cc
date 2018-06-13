@@ -6,13 +6,28 @@ using namespace std;
 
 int main()   	
 {
-	//Problem 6
-	auto sum_of_squares=0, square_of_sum=0;
-	for(int i=0; i<101; i++)
+	//Problem 7
+	auto number_primes=0, numbers=2, flag=0;
+	while(1>0)
 	{
-		sum_of_squares = sum_of_squares + i*i;
-		square_of_sum  += i; 
+		for(auto i=2; i<numbers; i++)
+		{
+			if(numbers%i==0)
+			{
+				flag=1;	
+				break;
+			}
+		}
+		if(flag==0)
+		{
+			number_primes++;
+			if(number_primes==10001)
+			{
+				cout << "The prime number is: " << numbers << endl;
+				return 0; 
+			} 
+		}
+		numbers++;
+		flag = 0;
 	}
-	square_of_sum = square_of_sum*square_of_sum;
-	cout << "The difference is:" << -sum_of_squares + square_of_sum << endl;
 }
