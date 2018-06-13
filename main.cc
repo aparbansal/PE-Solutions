@@ -1,37 +1,31 @@
 #include<iostream>
 #include<stdio.h>
+#include<algorithm>
 
 using namespace std;
 
-int main()   			//600851475143
+int main()   	
 {
-
-auto  no = 600851475143;
-auto  prime = 1;
-
-for(auto i=2; i<600851475143; i++)
-{
-  while(no%i==0)
-  {
-	prime  = i;
-	if(no!=i)	no = no / i;
-	else 		break;
-  }
-  if(no==i) 	break;
-}
-cout << "Prime no.: " << prime << endl;
-
-/* int sum=1, n=0, temp=0, temp2=0;
- cout << "Enter the number of elements: " << endl;
- cin >> n;
- for(int i=0; i<n; i++)
- while(sum < 4000000)
- {
-	sum = sum + temp;
-	printf("\n %d ", sum);
-	temp = sum-temp;
-	if(sum%2==0)	temp2 = temp2 + sum;
- }
-	cout << "\nRequired sum=" << float(22%33) << endl;
-*/
+	auto num = 0;
+	for(auto i=999; i>0; i--)
+	{
+		for(auto j=999; j>0; j--)
+		{
+			auto prod=0, rev_prod=0;
+			prod = i*j;
+			while(prod != 0)
+			{
+				auto remainder = prod%10;
+				rev_prod = rev_prod*10 + remainder;
+				prod /= 10;
+			}	
+			/*auto s = to_string(prod);*/
+			if(i*j == rev_prod && i*j>num)
+			{
+				num = i*j;
+				cout << "The number is: " << i << " x " << j << " = " << i*j << endl;
+			}
+		}
+	}
+	cout << "The answer is: " << num << endl;
 }
