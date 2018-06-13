@@ -6,22 +6,13 @@ using namespace std;
 
 int main()   	
 {
-//Problem 5
-unsigned long long num = 1, i = 1;
-unsigned flag = 0;
-while(i>0)
-{
-	flag = 0;
-	for(auto j=1; j<21; j++)
+	//Problem 6
+	auto sum_of_squares=0, square_of_sum=0;
+	for(int i=0; i<101; i++)
 	{
-		if(i%j!=0)	flag = 1;
+		sum_of_squares = sum_of_squares + i*i;
+		square_of_sum  += i; 
 	}
-	if(flag == 0)
-	{
-		num = i;
-		break;
-	}
-	i++;
-}
-cout << num << endl;
+	square_of_sum = square_of_sum*square_of_sum;
+	cout << "The difference is:" << -sum_of_squares + square_of_sum << endl;
 }
