@@ -6,28 +6,16 @@ using namespace std;
 
 int main()   	
 {
-	//Problem 7
-	auto number_primes=0, numbers=2, flag=0;
-	while(1>0)
+	//Problem 8
+	//auto a=0, b=0, c=0;
+	for(auto i=1; i<1001; i++)
+	for(auto j=1; j<1001; j++)	
+	for(auto k=1; k<1001; k++)
 	{
-		for(auto i=2; i<numbers; i++)
+		if(i+j+k==1000 && (i*i + j*j == k*k))
 		{
-			if(numbers%i==0)
-			{
-				flag=1;	
-				break;
-			}
+			printf("I won't lie to you. This is what we found.\n %d x %d x %d = %d\n", i, j, k, i*j*k);
+			return 0;
 		}
-		if(flag==0)
-		{
-			number_primes++;
-			if(number_primes==10001)
-			{
-				cout << "The prime number is: " << numbers << endl;
-				return 0; 
-			} 
-		}
-		numbers++;
-		flag = 0;
 	}
 }
