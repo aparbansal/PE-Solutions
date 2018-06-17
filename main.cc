@@ -6,16 +6,32 @@ using namespace std;
 
 int main()   	
 {
-	//Problem 8
-	//auto a=0, b=0, c=0;
-	for(auto i=1; i<1001; i++)
-	for(auto j=1; j<1001; j++)	
-	for(auto k=1; k<1001; k++)
+	//Problem 10
+	vector <long long int> prime_container;
+	auto number_primes=0, numbers=2, flag=0;
+	while(numbers<2000000)
 	{
-		if(i+j+k==1000 && (i*i + j*j == k*k))
+		for(auto i=2; i<numbers; i++)
 		{
-			printf("I won't lie to you. This is what we found.\n %d x %d x %d = %d\n", i, j, k, i*j*k);
-			return 0;
+			if(numbers%i==0)
+			{
+				flag=1;	
+				break;
+			}
 		}
+		if(flag==0)
+		{
+			prime_container.push_back(numbers);
+		}
+		numbers++;
+		flag = 0;
+ 	}
+	long long int sum = 0;
+	cout << "Prime nos are: " << endl;
+	for(auto i=0; i<prime_container.size(); i++)
+	{
+		cout <<  prime_container[i] << endl;
+		sum += prime_container[i];		
 	}
+	cout << "The sum of the prime nos. is: " << sum << endl;
 }
