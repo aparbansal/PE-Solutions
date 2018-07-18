@@ -6,32 +6,30 @@ using namespace std;
 
 int main()   	
 {
-	//Problem 10
-	vector <long long int> prime_container;
-	auto number_primes=0, numbers=2, flag=0;
-	while(numbers<2000000)
+	//Problem 12
+	unsigned long long number = 0;
+	while(1>0)
 	{
-		for(auto i=2; i<numbers; i++)
+		number++;
+		unsigned long long sum = 0;
+		int  num = 0;
+		for(auto i=1; i<=number; i++)
 		{
-			if(numbers%i==0)
+			sum += i;
+		}
+		for(auto i=1; i<sum; i++)
+		{
+			if(sum % i == 0)
 			{
-				flag=1;	
-				break;
+				//cout << i << endl;
+				num++;
 			}
 		}
-		if(flag==0)
+		cout << "The number of divisors for: " << sum << " are: " << num << endl; 
+		if(num>=500)
 		{
-			prime_container.push_back(numbers);
+			cout << "THE TRIANGLE NUMBER IS: " << sum  << endl;
+			break;
 		}
-		numbers++;
-		flag = 0;
- 	}
-	long long int sum = 0;
-	cout << "Prime nos are: " << endl;
-	for(auto i=0; i<prime_container.size(); i++)
-	{
-		cout <<  prime_container[i] << endl;
-		sum += prime_container[i];		
 	}
-	cout << "The sum of the prime nos. is: " << sum << endl;
 }
