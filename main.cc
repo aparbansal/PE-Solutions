@@ -6,30 +6,21 @@ using namespace std;
 
 int main()   	
 {
-	//Problem 12
-	unsigned long long number = 0;
-	while(1>0)
+	//Proving Probability
+	int array[4] = {0,0,10,10};
+	int n1, n2;
+	int positiveOutcome=0, sampleSpace=0;
+	
+	srand(time(NULL));
+	
+	for(unsigned long long i=0; i<1000000000000; i++)
 	{
-		number++;
-		unsigned long long sum = 0;
-		int  num = 0;
-		for(auto i=1; i<=number; i++)
-		{
-			sum += i;
-		}
-		for(auto i=1; i<sum; i++)
-		{
-			if(sum % i == 0)
-			{
-				//cout << i << endl;
-				num++;
-			}
-		}
-		cout << "The number of divisors for: " << sum << " are: " << num << endl; 
-		if(num>=500)
-		{
-			cout << "THE TRIANGLE NUMBER IS: " << sum  << endl;
-			break;
-		}
+		n1 = rand() % 4;
+		n2 = rand() % 4;
+		while(n2==n1)				n2 = rand() % 4;
+		if(array[n1]==10 && array[n2]==10)	positiveOutcome++;
+		sampleSpace++;
 	}
+	cout << "The probability of death by back-to-back hot pepper consumption is: " << (float) (positiveOutcome*1.0000000/sampleSpace) << endl;	
+	cout << "For the geeks :(  -> Probability = " << positiveOutcome << " / " << sampleSpace << endl;
 }
